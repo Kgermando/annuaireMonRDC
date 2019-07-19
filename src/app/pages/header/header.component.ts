@@ -9,7 +9,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 export class HeaderComponent {
 
     items = [
-      { title: 'Dashboard', link: '/pages/dashboard' },
+      { title: 'Dashboard', link: '/layout/profile' },
       { title: 'Logout', link: '' },
     ];
 

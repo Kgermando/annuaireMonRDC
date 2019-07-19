@@ -1,20 +1,45 @@
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageRoutingModule } from './pages-routing.module';
+import { AuthGuard } from '../service/guard/auth.guard';
+import { AuthService } from '../service/auth/auth.service';
+
 import { PagesComponent } from './pages.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchComponent } from './search/search.component';
-import { NbLayoutModule, NbButtonModule, NbMenuModule, NbContextMenuModule, NbCardModule, NbSearchModule } from '@nebular/theme';
-import { PageRoutingModule } from './pages-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 
+import { NbLayoutModule,
+         NbButtonModule,
+         NbMenuModule,
+         NbContextMenuModule,
+         NbCardModule,
+         NbSearchModule,
+         NbSidebarModule } from '@nebular/theme';
 
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, PagesComponent, NotFoundComponent, SearchComponent, HeaderComponent, FooterComponent, ContactComponent, AboutComponent],
+  declarations: [
+    PagesComponent,
+    NotFoundComponent,
+    SearchComponent,
+    ContactComponent,
+    AboutComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    FooterComponent,
+    HeaderComponent
+    ],
+
   imports: [
     NbLayoutModule,
     PageRoutingModule,
@@ -24,6 +49,8 @@ import { AboutComponent } from './about/about.component';
     NbContextMenuModule,
     NbCardModule,
     NbSearchModule,
-  ]
+    NbSidebarModule
+  ],
+  providers: [AuthGuard, AuthService ],
 })
 export class PagesModule { }
