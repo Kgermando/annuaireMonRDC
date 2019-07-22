@@ -10,6 +10,7 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { SecureInnerPagesGuard } from '../service/guard/secure-inner-pages.guard';
 
 const routes: Routes = [{
     path: '',
@@ -29,19 +30,23 @@ const routes: Routes = [{
       },
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [SecureInnerPagesGuard]
       },
       {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        canActivate: [SecureInnerPagesGuard]
       },
       {
         path: 'forgot-password',
-        component: ForgotPasswordComponent
+        component: ForgotPasswordComponent,
+        canActivate: [SecureInnerPagesGuard]
       },
       {
         path: 'verifi-email',
-        component: VerifyEmailComponent
+        component: VerifyEmailComponent,
+        canActivate: [SecureInnerPagesGuard]
       },
 
       {

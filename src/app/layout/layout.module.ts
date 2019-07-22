@@ -7,14 +7,19 @@ import { NbLayoutModule,
          NbCardModule,
          NbSearchModule,
          NbSidebarModule,
-         NbMenuModule } from '@nebular/theme';
+         NbMenuModule,
+         NbDatepickerModule,
+         NbSelectModule} from '@nebular/theme';
 
 import { AddFormsComponent } from './add-forms/add-forms.component';
 import { EditFormsComponent } from './edit-forms/edit-forms.component';
 import { FormsListComponent } from './forms-list/forms-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderComponent } from './header/header.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,12 @@ import { HeaderComponent } from './header/header.component';
 
   imports: [
     LayoutRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule,
+
+    NgbModule,
 
     NbLayoutModule,
     NbButtonModule,
@@ -38,6 +49,8 @@ import { HeaderComponent } from './header/header.component';
     NbSearchModule,
     NbSidebarModule,
     NbMenuModule,
+    NbDatepickerModule,
+    NbSelectModule,
   ]
 })
 export class LayoutModule { }

@@ -23,6 +23,10 @@ import { NbLayoutModule,
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -43,6 +47,13 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     NbLayoutModule,
     PageRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule,
+
+    NgbModule,
+    NgbDropdownModule,
 
     NbButtonModule,
     NbMenuModule,

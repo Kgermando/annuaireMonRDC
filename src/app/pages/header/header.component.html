@@ -15,8 +15,20 @@
   <li class="nav-item">
     <a class="nav-link" routerLink="/pages/register">Inscription</a>
   </li>
+  <!-- <li class="nav-item">
+    <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+      <a class="dropdown-item" href="#" >Action</a>
+      <a class="dropdown-item" href="#" >Another action</a>
+      <a class="dropdown-item" href="#" >Something else here</a>
+    </div>
+  </li> -->
+ 
   <li class="nav-item">
     <a class="nav-link" routerLink="/pages/login">Connexion</a>
+  </li>
+
+  <li class="nav-item">
+    <button><a class="nav-link" (click)="signout()">Déconnexion</a></button>  
   </li>
 </ul>
 

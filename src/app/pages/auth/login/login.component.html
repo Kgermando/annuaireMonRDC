@@ -1,57 +1,43 @@
 
 
-    <div class="row show-grid">
-        <div class="col-6 col-md-3"></div>
-        <div class="col-6 col-md-6">
-                <nb-card>
-                    <nb-card-header>Log In</nb-card-header>
-                    <nb-card-body>
-                        <input type="text" nbInput fullWidth placeholder="Email" #userName required>
-                    </nb-card-body>
-                    <nb-card-body>
-                        <input type="password" nbInput fullWidth placeholder="Mot de passe" #userPassword required>
-                    </nb-card-body>
-                    <nb-card-body>
-                        <input type="button" nbInput fullWidth value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-                    </nb-card-body>
-                </nb-card>
-        </div>
-        <div class="col-6 col-md-3"></div>
-    </div>
+<nb-card class="col-md-6 offset-md-3">
+    <nb-card-header center><h2>Connectez-vous!</h2></nb-card-header>
+    <nb-card-body>
 
-
-
-
-<div class="displayTable">
-    <div class="displayTableCell">
-        <div class="authBlock">
-            <h3>Sign In</h3>
-            <div class="formGroup">
-                <input type="text" class="formControl" placeholder="Username" #userName required>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" #userName required>
+                <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre email avec qui que ce soit.</small>
             </div>
-            <div class="formGroup">
-                <input type="password" class="formControl" placeholder="Password" #userPassword required>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #userPassword required>
             </div>
-            <!-- Calling SignIn Api from AuthService -->
-            <div class="formGroup">
-                <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
-            <div class="formGroup">
-                <span class="or"><span class="orInner">Or</span></span>
-            </div>
-            <!-- Calling GoogleAuth Api from AuthService -->
-            <div class="formGroup">
-                <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-                <i class="fab fa-google-plus-g"></i>
-                Log in with Google
-                </button>
-            </div>
+            <button type="submit" class="btn btn-primary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">Submit</button>
+    <br>
+    <br> 
             <div class="forgotPassword">
-                <span routerLink="/forgot-password">Forgot Password?</span>
+                <span routerLink="/pages/forgot-password" style="color:fuchsia;">Mot de passe oublié?</span>
             </div>
-        </div>
-        <div class="redirectToLogin">
-            <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-        </div>
-    </div>
-</div>
+    <br>
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Ou</span></span>
+            </div>
+    <hr>
+             <!-- Calling GoogleAuth Api from AuthService -->
+            <div class="formGroup">
+                <button type="button" class="btn btn-primary" (click)="authService.GoogleAuth()">
+                <i class="fab fa-google-plus-g"></i>
+                    Connectez-vous avec Google
+                </button>
+            </div> 
+    <hr>
+            <div class="redirectToLogin">
+                <span>Je n'ai pas de compte? <span class="redirect" routerLink="/pages/register"><span style="color: dodgerblue;">S'inscrire ici.</span> </span></span>
+            </div>
+    </nb-card-body>
+</nb-card>

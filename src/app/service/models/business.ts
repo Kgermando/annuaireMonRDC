@@ -1,6 +1,6 @@
 export interface Business {
     $key: string;
-    business_name: string;
+    businessName: string;
     category: string;
     description: string;
     province: string;
@@ -11,5 +11,5 @@ export interface Business {
     email: string;
     website: string;
     image: string;
-    publication_date: Date;
+    publicationDate: Date;
 }

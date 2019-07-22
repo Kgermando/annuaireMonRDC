@@ -26,6 +26,7 @@
     "@nebular/eva-icons": "4.1.2",
     "@nebular/security": "^4.1.2",
     "@nebular/theme": "^4.1.2",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.0",
     "eva-icons": "^1.1.1",
     "firebase": "^6.3.0",
     "hammerjs": "^2.0.8",
