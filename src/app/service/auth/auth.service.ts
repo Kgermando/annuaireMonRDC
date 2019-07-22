@@ -58,14 +58,14 @@ export class AuthService {
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()
       .then(() => {
-      this.router.navigate(['verify-email-address']);
+      this.router.navigate(['Vérifier l\'adresse e-mail']);
   });
   }
   // Reset Forggot password
   ForgotPassword(passwordResetEmail) {
     return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-      window.alert('Password reset email sent, check your inbox.');
+      window.alert('Email de réinitialisation de mot de passe envoyé, vérifiez votre boîte de réception.');
     }).catch((error) => {
       window.alert(error);
     });

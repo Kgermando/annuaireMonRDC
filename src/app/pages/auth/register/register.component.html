@@ -1,21 +1,33 @@
 <nb-card class="col-md-6 offset-md-3">
     <nb-card-header center><h2>Inscription</h2></nb-card-header>
     <nb-card-body>
-        <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" #userEmail required>
+                <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre email avec qui que ce soit.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #userPwd required>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <button type="submit" class="btn btn-primary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">Inscription</button>
+
+    <br>
+    <br>
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Ou</span></span>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <hr>
+                <!-- Calling GoogleAuth Api from AuthService -->
+            <div class="formGroup">
+                <button type="button" class="btn btn-primary" (click)="authService.GoogleAuth()">
+                <i class="fab fa-google-plus-g"></i>
+                    Inscrivez-vous par Google
+                </button>
+            </div> 
+    <hr>
+            <div class="redirectToLogin">
+                <span>Vous avez déjà un compte? <span class="redirect" routerLink="/pages/login"><a style="color: dodgerblue;">Se connecter ici.</a> </span></span>
+            </div>
     </nb-card-body>
 </nb-card>
