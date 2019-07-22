@@ -1,76 +1,83 @@
+<div class="container">
 
-<div class="row">
-    <div class="col-md-6 offset-md-3">
-    <form [formGroup]="businessForm" (ngSubmit)="onSubmit(businessForm.value)">
-        <nb-card>
-          <nb-card-header center><h2>Soumettre votre Business</h2></nb-card-header>
-          <nb-card-body>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Business Name</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Business Name" formControlName="businessName"> 
+        <form [formGroup]="businessForm" (ngSubmit)="onSubmit(businessForm.value)">
+            <nb-card>
+            <nb-card-header center><h2 style="text-align: center;">Soumettre votre Business</h2></nb-card-header>
+            <nb-card-body>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Business Name</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Business Name" formControlName="businessName"> 
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Categorie</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Categorie" formControlName="category"> 
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description" formControlName="description"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Province</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Province" formControlName="province"> 
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Ville</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ville" formControlName="ville"> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Commune</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Commune" formControlName="commune"> 
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Adresse</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Adresse" formControlName="adress"> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Télephone</label>
+                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Télephone" formControlName="telephone"> 
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Email</label>
+                            <input type="email" class="form-control" id="formGroupExampleInput" placeholder="email" formControlName="email"> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Site Web</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Site Web" formControlName="website"> 
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="formGroupExampleInput">Ajoutez une Date</label>
+                            <input  class="form-control" id="formGroupExampleInput" placeholder="Date Publication" [nbDatepicker]="formpicker" formControlName="publicationDate">
+                            <nb-datepicker #formpicker></nb-datepicker>
+                        </div>
+                    </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputState">Logo</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                        </select>
+                    </div>
                 </div>
+            </nb-card-body>
+            <!-- <nb-card-body class="example-items-col">
+                <input type="file" id="photo" (change)="detectFiles($event)" accept="image/*">
+                <p color="primary" *ngIf="fileUploaded">Fichier chargé !</p>
+            </nb-card-body> -->
 
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Categorie</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Categorie" formControlName="category"> 
-                </div>
+            <nb-card-body class="example-items-col">
+                <button nbButton type="submit" [disabled]="!businessForm.valid" >Soumettre</button>
+            </nb-card-body>
+            </nb-card>
+        </form>    
 
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Description</label>
-                    <!-- <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Description" formControlName="description"> -->
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description" formControlName="description"></textarea>
-                </div>
 
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Province</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Province" formControlName="province"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Ville</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ville" formControlName="ville"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Commune</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Commune" formControlName="commune"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Adresse</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Adresse" formControlName="adress"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Télephone</label>
-                    <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Télephone" formControlName="telephone"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Email</label>
-                    <input type="email" class="form-control" id="formGroupExampleInput" placeholder="email" formControlName="email"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Site Web</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Site Web" formControlName="website"> 
-                </div>
-
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Ajoutez une Date</label>
-                    <input  class="form-control" id="formGroupExampleInput" placeholder="Date Publication" [nbDatepicker]="formpicker" formControlName="publicationDate">
-                    <nb-datepicker #formpicker></nb-datepicker>
-                </div>
-          </nb-card-body>
-          <!-- <nb-card-body class="example-items-col">
-            <input type="file" id="photo" (change)="detectFiles($event)" accept="image/*">
-            <p color="primary" *ngIf="fileUploaded">Fichier chargé !</p>
-          </nb-card-body> -->
-
-          <nb-card-body class="example-items-col">
-            <button nbButton type="submit" [disabled]="!businessForm.valid" >Soumettre</button>
-          </nb-card-body>
-        </nb-card>
-    </form>    
-    </div>
-  </div>
+</div>
