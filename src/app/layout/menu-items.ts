@@ -22,5 +22,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
                 }
             ],
         },
+        {
+            title: 'STATISTIQUE',
+            icon: '',
+            link: '/layout/statistiques'
+        },
 
     ];

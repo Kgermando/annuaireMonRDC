@@ -1,6 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
+// import { Observable, BehaviorSubject } from 'rxjs';
+// import 'rxjs/operator/map';
+// import 'rxjs/operators/switchMap';
+// import 'rxjs/operator/debounceTime';
+// import 'rxjs/operator/add/distinctUntilChanged';
+// import { Observable } from 'rxjs';
+// import { BehaviorSubject } from 'rxjs';
+
+import { mergeMap, switchMap, retry,
+  map, catchError, filter, scan } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -80,5 +90,31 @@ export class DataService {
       }
     );
   }
+
+  // getSearchBusiness(start: BehaviorSubject<string>): Observable<any[]> {
+  //   return start
+  //     .switchMap(startText => {
+  //       const endText = startText + '\uf8ff';
+  //       return this.db
+  //         .collection('business-list', ref =>
+  //           ref
+  //             .orderBy('businessName')
+  //             .limit(10)
+  //             .startAt(startText)
+  //             .endAt(endText)
+  //         )
+  //         .snapshotChanges()
+  //         .debounceTime(200)
+  //         .distinctUntilChanged()
+  //         .map(changes => {
+  //           return changes.map(c => {
+  //             console.log(c);
+  //             const data = c.payload.doc.data();
+  //             const id = c.payload.doc.id;
+  //             return { id, ...data };
+  //           });
+  //         });
+  //     });
+  // }
 
 }

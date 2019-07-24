@@ -20,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StatistiqueComponent } from './statistique/statistique.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsListComponent,
     ProfileComponent,
     HeaderComponent,
+    StatistiqueComponent,
   ],
 
   imports: [
@@ -38,6 +41,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+
+    MaterialModule,
 
     NgbModule,
 

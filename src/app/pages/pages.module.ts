@@ -19,7 +19,8 @@ import { NbLayoutModule,
          NbContextMenuModule,
          NbCardModule,
          NbSearchModule,
-         NbSidebarModule } from '@nebular/theme';
+         NbSidebarModule, 
+         NbActionsModule} from '@nebular/theme';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -60,7 +61,8 @@ import { NgbModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     NbContextMenuModule,
     NbCardModule,
     NbSearchModule,
-    NbSidebarModule
+    NbSidebarModule,
+    NbActionsModule,
   ],
   providers: [AuthGuard, AuthService ],
 })

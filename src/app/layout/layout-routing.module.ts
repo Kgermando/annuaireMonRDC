@@ -4,8 +4,8 @@ import { LayoutComponent } from './layout.component';
 import { AddFormsComponent } from './add-forms/add-forms.component';
 import { EditFormsComponent } from './edit-forms/edit-forms.component';
 import { FormsListComponent } from './forms-list/forms-list.component';
-import { NotFoundComponent } from '../pages/not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { StatistiqueComponent } from './statistique/statistique.component';
 
 
 
@@ -16,6 +16,7 @@ const routes: Routes = [
       {path: 'add-forms', component: AddFormsComponent},
       {path: 'edit/:id', component: EditFormsComponent},
       {path: 'forms-list', component: FormsListComponent},
+      {path: 'statistiques', component: StatistiqueComponent},
 
       { path: '', redirectTo: 'profile' },
       { path: '**', redirectTo: 'profile' },

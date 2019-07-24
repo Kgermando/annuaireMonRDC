@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
+import {MatSliderModule, MatSlideToggleModule, MatFormFieldModule} from '@angular/material';
 
-const materialComponent = [];
+const materialComponent = [
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatFormFieldModule
+];
 
 
 @NgModule({

@@ -1,1 +1,56 @@
-<p>edit-forms works!</p>
+<div class="edit-page">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Edit Business</li>
+          </ol>
+        </nav>
+        <div class="page-content">
+          <div class="row">
+            <div class="col col-md-4">
+              <img class="img-avatar" [src]="item.avatar">
+              <!-- <button mat-stroked-button class="change-img-button" color="primary" (click)="openDialog()">Change Avatar</button> -->
+            </div>
+            <div class="col col-md-8">
+      
+              <form class="edit-form" [formGroup]="businessForm" novalidate (ngSubmit)="onSubmit(businessForm.value)">
+      
+                <div class="form-group">
+                  <mat-form-field class="input-style">
+                    <input matInput placeholder="Name" class="form-control" formControlName="name">
+                  </mat-form-field>
+                  <ng-container *ngFor="let validation of validation_messages.name">
+                    <mat-error *ngIf="businessForm.get('businessName').hasError(validation.type) && (businessForm.get('name').dirty || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
+                  </ng-container>
+                </div>
+      
+                <div class="form-group">
+                  <mat-form-field class="input-style">
+                    <input matInput placeholder="Surname" class="form-control" formControlName="surname">
+                  </mat-form-field>
+                  <ng-container *ngFor="let validation of validation_messages.surname">
+                    <mat-error *ngIf="businessForm.get('surname').hasError(validation.type) && (businessForm.get('surname').dirty || businessForm.get('surname').touched)">{{validation.message}}</mat-error>
+                  </ng-container>
+                </div>
+      
+                <div class="form-group">
+                  <mat-form-field class="input-style">
+                    <input matInput type="number" min="0" max="100" placeholder="Age" class="form-control" formControlName="age">
+                  </mat-form-field>
+                  <ng-container *ngFor="let validation of validation_messages.age">
+                    <mat-error *ngIf="businessForm.get('age').hasError(validation.type) && (businessForm.get('age').dirty || businessForm.get('age').touched)">{{validation.message}}</mat-error>
+                  </ng-container>
+                </div>
+      
+                <div class="row submit-button-container">
+                  <div class="col-md-4">
+                    <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!businessForm.valid">Save</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button mat-raised-button class="delete-button" color="warn" type="button" (click)="delete()">Delete</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

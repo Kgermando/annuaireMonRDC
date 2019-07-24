@@ -11,7 +11,16 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbDatepickerModule, NbToastrModule } from '@nebular/theme';
+import { NbThemeModule,
+  NbLayoutModule,
+  NbMenuModule,
+  NbSidebarModule,
+  NbDatepickerModule,
+  NbToastrModule,
+  NbActionsModule,
+  NbSearchModule,
+  NbIconModule } from '@nebular/theme';
+
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './service/data.service';
@@ -46,6 +55,11 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     NbSidebarModule.forRoot(),
     NbDatepickerModule.forRoot(),
     // NbToastrModule.forRoot(config),
+    NbEvaIconsModule,
+    NbActionsModule,
+    NbSearchModule,
+    NbIconModule,
+    NbMenuModule.forRoot(),
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

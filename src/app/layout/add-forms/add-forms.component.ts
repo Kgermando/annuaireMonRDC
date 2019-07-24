@@ -92,3 +92,7 @@ constructor(private formbuilder: FormBuilder,
 
 
 }
+
+// 3 numero phone
+// adress : rue, boulvard,
+//  province, commune, ville: dropdown

@@ -1,40 +1,48 @@
+<!-- <nav class="nav">
+  <div class="logo">
+    <img src="../../../assets/googlelogo.png" style="width: 80px; height:50px" alt="">
+  </div>
 
-<ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link active" routerLink="/pages/search">Acceuil</a>
+  <div class="nav-right">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+          <a class="nav-link active" routerLink="/pages/search">Acceuil</a>
+       </li>
+      <li class="nav-item">
+        <a class="nav-link active" >Categorie</a>
       </li>
-  <li class="nav-item">
-    <a class="nav-link active" >Categorie</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/pages/about">A Propos</a>
-  </li>
-  <li class="nav-item">
-      <a class="nav-link" routerLink="/pages/contact">Contact</a>
-    </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/pages/register">Inscription</a>
-  </li>
-  <!-- <li class="nav-item">
-    <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-      <a class="dropdown-item" href="#" >Action</a>
-      <a class="dropdown-item" href="#" >Another action</a>
-      <a class="dropdown-item" href="#" >Something else here</a>
-    </div>
-  </li> -->
- 
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/pages/login">Connexion</a>
-  </li>
-<!-- 
-  <li class="nav-item">
-    <button><a class="nav-link" (click)="signout()">Déconnexion</a></button>  
-  </li> -->
-</ul>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pages/about">A Propos</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/pages/contact">Contact</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pages/register">Inscription</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pages/login">Connexion</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
 
+<div class="header-container">
+  <div class="logo-containter">
+      <img src="../../../assets/img/logo.png" style="width: 190px; height:80px;" alt="">
+    <!-- <a (click)="toggleSidebar()" href="#" class="navigation"></a> -->
+    <!-- <div class="logo">MonRDC</div> -->
+  </div>
+</div>
 
-
-
-    <!-- <button outline nbButton [nbContextMenu]="items">
-        Show Menu
-    </button> -->
+<div class="header-container">
+  <nb-actions>
+    <nb-action class="control-item"><a href="" routerLink="/pages/about">Acceuil</a> </nb-action>
+    <nb-action class="control-item"><a href="">Categorie</a></nb-action>
+    <nb-action class="control-item"><a href="">A Propos</a></nb-action>
+    <nb-action class="control-item"><a href="" routerLink="/pages/contact">Contact</a></nb-action>
+    <nb-action class="control-item"><a href="" routerLink="/pages/register">Inscription</a></nb-action>
+    <nb-action class="control-item"><a href="" routerLink="/pages/login">Connexion</a></nb-action>
+  </nb-actions>
+</div>
