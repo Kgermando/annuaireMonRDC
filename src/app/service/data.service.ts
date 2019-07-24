@@ -9,8 +9,6 @@ import * as firebase from 'firebase';
 // import { Observable } from 'rxjs';
 // import { BehaviorSubject } from 'rxjs';
 
-import { mergeMap, switchMap, retry,
-  map, catchError, filter, scan } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +59,8 @@ export class DataService {
       commune: value.commune,
       adress: value.adress,
       telephone: value.telephone,
+      telephone2: value.telephone2,
+      telephone3: value.telephone3,
       email: value.email,
       website: value.website,
       publicationDate: value.publicationDate,

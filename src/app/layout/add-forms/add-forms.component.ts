@@ -74,6 +74,8 @@ constructor(private formbuilder: FormBuilder,
       commune: new FormControl(''),
       adress: new FormControl(''),
       telephone: new FormControl(''),
+      telephone2: new FormControl(''),
+      telephone3: new FormControl(''),
       email: new FormControl(''),
       website: new FormControl(''),
       publicationDate: new FormControl('')

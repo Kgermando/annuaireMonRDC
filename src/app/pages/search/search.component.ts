@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/service/data.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { switchMap, filter } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { timer, combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -10,21 +12,48 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class SearchComponent implements OnInit {
 
-  business$: Observable<any[]>;
-  startAt: BehaviorSubject<string | null> = new BehaviorSubject('');
+  searchterm: string;
 
-  constructor(
-    public data: DataService,
-    private router: Router
-  ) { }
+  startAt = new Subject();
+  endAt = new Subject();
 
-  ngOnInit() {
-    // this.business$ = this.data
-    //   .getSearchBusiness(this.startAt);
+  business;
+  allBusiness;
+
+  startobs = this.startAt.asObservable();
+  endobs = this.endAt.asObservable();
+
+  constructor(private afs: AngularFirestore) {
+
   }
 
-  // search(searchText) {
-  //   this.startAt.next(searchText);
-  // }
+  ngOnInit() {
+    this.getallBusiness().subscribe((clubs) => {
+      this.allBusiness = clubs;
+    });
+    combineLatest(this.startobs, this.endobs).subscribe((value) => {
+      this.firequery(value[0], value[1]).subscribe((clubs) => {
+        this.business = clubs;
+      });
+    });
+  }
+
+  search($event) {
+    const q = $event.target.value;
+    if (q !== '') {
+      this.startAt.next(q);
+      this.endAt.next(q + '\uf8ff');
+    } else {
+      this.business = this.allBusiness;
+    }
+  }
+
+  firequery(start, end) {
+    return this.afs.collection('business-list', ref => ref.limit(4).orderBy('businessName').startAt(start).endAt(end)).valueChanges();
+  }
+
+  getallBusiness() {
+    return this.afs.collection('business-list', ref => ref.orderBy('businessName')).valueChanges();
+  }
 
 }

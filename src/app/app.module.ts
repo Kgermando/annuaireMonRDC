@@ -47,6 +47,7 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    AngularFirestoreModule.enablePersistence(),
 
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
