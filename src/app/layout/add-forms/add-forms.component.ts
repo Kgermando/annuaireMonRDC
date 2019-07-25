@@ -43,6 +43,8 @@ constructor(private formbuilder: FormBuilder,
       commune: ['', Validators.required ],
       adress: ['', Validators.required ],
       telephone: ['', Validators.required ],
+      telephone2: ['', Validators.required ],
+      telephone3: ['', Validators.required ],
       email: ['', Validators.required ],
       website: ['', Validators.required ],
       publicationDate: ['', Validators.required ]

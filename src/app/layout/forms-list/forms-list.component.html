@@ -23,12 +23,12 @@
                 (ngModel)="ageValue"
                 (change)="rangeChange($event)">
               </mat-slider>
-              <span> 100</span>
+              <span>100</span>
             </div>
           </div>
         </div>
       </div>
-      
+   
       <div class="list-group users-list">
         <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="row">
@@ -39,7 +39,7 @@
             <div class="col col-md-8 text-col">
               <h5 class="mb-1">{{item.payload.doc.data().businessName}}</h5>
                    <h5>{{item.payload.doc.data().category}}</h5>
-              <small>Age: {{item.payload.doc.data().ville}}</small>
+              <small>Ville: {{item.payload.doc.data().ville}}</small>
             </div>
             <div class="col col-md-2 actions-col">
               <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
@@ -49,3 +49,45 @@
           </div>
         </div>
       </div>
+
+<p>
+  <a routerLink="/layout/add-forms" class="btn-btn-primary">Ajout Business</a>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Business Nom</th>
+      <th>Categorie</th>
+      <th>Description</th>
+      <th>Province</th>
+      <th>Ville</th>
+      <th>Commune</th>
+      <th>Quartier</th>
+      <th>Adresse</th>
+      <th>Telephone</th>
+      <th>Telephone 2</th>
+      <th>Telephone 3</th>
+      <th>Email</th>
+      <th>Site web</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items | async">
+      <td>{{ item.payload.doc.data().businessName }}</td>
+      <td>{{ item.payload.doc.data().Categorie }}</td>
+      <td>{{ item.payload.doc.data().description }}</td>
+      <td>{{ item.payload.doc.data().province }}</td>
+      <td>{{ item.payload.doc.data().ville }}</td>
+      <td>{{ item.payload.doc.data().commune }}</td>
+      <td>{{ item.payload.doc.data().quartier }}</td>
+      <td>{{ item.payload.doc.data().adress }}</td>
+      <td>{{ item.payload.doc.data().telephone }}</td>
+      <td>{{ item.payload.doc.data().telephone2 }}</td>
+      <td>{{ item.payload.doc.data().telephone3 }}</td>
+      <td>{{ item.payload.doc.data().email }}</td>
+      <td>{{ item.payload.doc.data().website }}</td>
+      <td><a [routerLink]="['/layout/edit/', item.$key]" >Modifiez</a></td>
+    </tr>
+  </tbody>
+</table>
